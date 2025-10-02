@@ -1,0 +1,19 @@
+/* Main 主區塊 */
+.index-main {
+    display: flex;
+    justify-content: center; /* 水平置中整個內容區 */
+}
+
+.profile-card-wrapper {
+    margin-top: 60px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+profile-card {
+    display: block;
+    width: 100%;
+}

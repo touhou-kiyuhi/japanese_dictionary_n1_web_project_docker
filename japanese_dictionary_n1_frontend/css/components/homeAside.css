@@ -1,0 +1,62 @@
+/* Aside 區塊（桌面） */
+.content-asides {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+aside {
+    padding: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 5px 0;
+}
+
+/* ========= 🔁 響應式調整（手機） ========= */
+@media (max-width: 610px) {
+    .content-asides {
+        width: 100%; /* 滿版 */
+        order: -1;    /* 移到 main 上面 */
+    }
+}
+
+/* 🌞 淺色模式樣式 */
+:host-context(body.light-mode) aside {
+    background-color: #ddd;
+}
+
+:host-context(body.light-mode) aside h3 {
+    color: #333;
+}
+
+:host-context(body.light-mode) a {
+    color: #007acc;
+}
+
+:host-context(body.light-mode) a:hover {
+    color: #005b99;
+}
+
+/* 🌙 深色模式樣式 */
+:host-context(body.dark-mode) aside {
+    background-color: #2a2a2a;
+}
+
+:host-context(body.dark-mode) aside h3 {
+    color: #f0f0f0;
+}
+
+:host-context(body.dark-mode) a {
+    color: #90caf9;
+}
+
+:host-context(body.dark-mode) a:hover {
+    color: #ffffff;
+}

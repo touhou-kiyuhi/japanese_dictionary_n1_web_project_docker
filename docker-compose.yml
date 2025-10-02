@@ -1,0 +1,41 @@
+version: "3.9"
+
+# volumes 命名
+volumes:
+  db_data:
+
+services:
+  mysql:
+    image: mysql:9.2.0
+    container_name: my_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/jlpt_n1_utf8mb4.sql:/docker-entrypoint-initdb.d/jlpt_n1_utf8mb4.sql
+
+  backend:
+    build: ./backend/japanese_dictionary_n1_java_spring_boot_backend
+    container_name: my_backend
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./japanese_dictionary_n1_frontend
+    container_name: my_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

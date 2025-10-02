@@ -1,0 +1,143 @@
+/* ========== 🧩 Main 主區塊 ========== */
+main {
+    padding: 20px;
+    background-color: #f4f4f4;
+    padding-bottom: 80px; /* 保留 footer 空間 */
+    transition: background-color 0.3s ease;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+main .form-container,
+main .data-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+main h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+main form fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+main form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+main form input,
+main form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+main form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #454545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main form button:hover {
+    background-color: #333;
+}
+
+main .data-container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+main .data-container strong {
+    color: #333;
+}
+
+/* 🌞 淺色模式 */
+body.light-mode main {
+    background-color: #f4f4f4;
+}
+
+body.light-mode main .container,
+body.light-mode main .form-container,
+body.light-mode main .data-container {
+    background-color: #ffffff;
+}
+
+body.light-mode main h1,
+body.light-mode main .data-container strong {
+    color: #333333;
+}
+
+body.light-mode main form input,
+body.light-mode main form textarea {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+}
+
+/* 🌙 深色模式 */
+body.dark-mode main {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode main .container,
+body.dark-mode main .form-container,
+body.dark-mode main .data-container {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode main form input,
+body.dark-mode main form textarea {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+body.dark-mode main h1,
+body.dark-mode main .data-container strong {
+    color: #ffffff;
+}
+
+body.dark-mode main form input,
+body.dark-mode main form textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode main form button {
+    background-color: #3399ff;
+}
+
+body.dark-mode main form button:hover {
+    background-color: #1e7ec8;
+}

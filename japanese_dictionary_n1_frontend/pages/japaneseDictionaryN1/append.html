@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 告訴瀏覽器這個網站支援「light」和「dark」兩種配色方案 -->
+    <meta name="color-scheme" content="light dark">
+    <!-- 會在頁面尚未畫出來前決定該用哪個主題，並快速加上相對應的 class，防止閃爍（FART） -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const selectedTheme = theme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.classList.add(`${selectedTheme}-mode`);
+        })();
+    </script>
+    <!-- 載入 Web Component -->
+    <script type="module" src="/js/components/homeHeader.js"></script>
+    <script type="module" src="/js/components/homeFooter.js"></script>
+    <script type="module" src="/js/components/homeAside.js"></script>
+    <script type="module" src="/js/components/profileCard.js"></script>
+    <script type="module" src="/js/japaneseDictionaryN1/append_script.js"></script>
+    <title>日文字典：N1 - 資料新增</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Default Styles -->
+    <link rel="stylesheet" href="/css/defaultStyle/defaultBodyStyle.css">
+    <link rel="stylesheet" href="/css/defaultStyle/defaultAsideStyle.css">
+    <link rel="stylesheet" href="/css/defaultStyle/defaultMainStyle.css">
+    <!-- Self Style -->
+     <link rel="stylesheet" href="/css/japaneseDictionaryN1/append_style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header 內容 -->
+    	<home-header></home-header>
+        <div class="content-wrapper">
+            <!-- 側欄 -->
+            <div class="content-asides">
+                <home-aside></home-aside>
+                <aside>
+                    <!-- Profile Card -->
+                    <profile-card></profile-card>
+                </aside>
+            </div>
+            <!-- 主內容 -->
+            <main>
+                <div class="container">
+                    <div class="form-container">
+                        <h1>日文字典輸入表單</h1>
+                        <form id="wordForm">
+                            <fieldset>
+                                <legend>日文詞語與假名</legend>
+                                <label for="word">日文詞語：</label>
+                                <input type="text" id="word" name="word" required><br><br>
+            
+                                <label for="kana">假名：</label>
+                                <input type="text" id="kana" name="kana" required><br><br>
+            
+                                <!-- 新增羅馬拼音欄位 -->
+                                <label for="romaji">羅馬拼音：</label>
+                                <input type="text" id="romaji" name="romaji" required><br><br>
+                            </fieldset>
+            
+                            <fieldset>
+                                <legend>意思與例句</legend>
+                                <label for="meaning">詞語意思：</label>
+                                <textarea id="meaning" name="meaning" rows="3" required></textarea><br><br>
+            
+                                <label for="sentence">例句：</label>
+                                <textarea id="sentence" name="sentence" rows="3" required></textarea><br><br>
+            
+                                <label for="sentenceMeaning">例句意思：</label>
+                                <textarea id="sentenceMeaning" name="sentenceMeaning" rows="3" required></textarea><br><br>
+                            </fieldset>
+            
+                            <div>
+                                <button type="submit">提交</button>
+                            </div>
+                        </form>
+                    </div>
+            
+                    <div class="data-container">
+                        <h1>剛剛新增的資料</h1>
+                        <div id="dataDetails"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- Footer 內容 -->
+        <home-footer></home-footer>
+    </div>
+    <script src="/js/japaneseDictionaryN1/japaneseDictionaryN1.js"></script>
+</body>
+</html>

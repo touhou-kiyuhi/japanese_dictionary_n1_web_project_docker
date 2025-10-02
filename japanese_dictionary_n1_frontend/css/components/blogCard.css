@@ -1,0 +1,121 @@
+/* 卡片外層設置 */
+article {
+    display: flex;
+    align-items: center; /* 讓 logo 和內容垂直置中 */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    max-width: 100%;
+    overflow: hidden; /* 防止內容溢出 */
+    width: 400px; /* 固定寬度 */
+}
+
+article:hover {
+    transform: scale(1.05);
+}
+
+/* 左側 Logo 區塊 */
+.logo {
+    width: 70px; /* 調整為更適合的大小 */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden; /* 保證圖片不會超出範圍 */
+    padding: 10px; /* 為 logo 加入內邊距 */
+}
+
+.logo img {
+    width: 100%; /* 圖片自動填滿容器寬度 */
+    height: 100%; /* 圖片高度設為 100% 以填滿區域 */
+    object-fit: contain; /* 保持比例顯示圖片，不會拉伸 */
+}
+
+/* 右側內容區塊 */
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    margin-left: 20px; /* 讓內容區塊與 logo 區塊有間距 */
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.card p {
+    color: #555;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* 當點擊卡片時的效果 */
+article:active {
+    transform: scale(0.98);
+}
+
+/* 🌞 日間模式樣式 */
+:host-context(body.light-mode) article {
+    background-color: #ffffff; /* 日間模式背景為白色 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 淺色模式下的陰影效果 */
+}
+
+:host-context(body.light-mode) .card-content {
+    background-color: #ffffff; /* 日間模式下內容區塊為白色 */
+}
+
+:host-context(body.light-mode) .card h2 {
+    color: #333333; /* 日間模式標題顏色為深灰色 */
+}
+
+:host-context(body.light-mode) .card p {
+    color: #555555; /* 日間模式文字顏色為較淺的灰色 */
+}
+
+/* 🌙 深色模式樣式 */
+:host-context(body.dark-mode) article {
+    background-color: #2c2c2c; /* 深色模式背景為深灰色 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 深色模式下的陰影效果 */
+}
+
+:host-context(body.dark-mode) .card-content {
+    background-color: #333333; /* 深色模式下內容區塊為深灰色 */
+}
+
+:host-context(body.dark-mode) .card h2 {
+    color: #e0e0e0; /* 深色模式標題顏色為淺灰色 */
+}
+
+:host-context(body.dark-mode) .card p {
+    color: #b0b0b0; /* 深色模式文字顏色為較亮的灰色 */
+}
+
+/* 響應式設計 */
+@media (max-width: 610px) {
+    article {
+        flex-direction: column; /* 在小螢幕下變成垂直排列 */
+        width: 90%; /* 讓小螢幕下的卡片寬度最大為 90% */
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        padding: 8px; /* 小螢幕下調整 logo 內邊距 */
+    }
+
+    .card-content {
+        padding: 10px;
+        margin-left: 0; /* 在小螢幕上移除間距 */
+    }
+
+    .card h2 {
+        font-size: 1.2em;
+    }
+}

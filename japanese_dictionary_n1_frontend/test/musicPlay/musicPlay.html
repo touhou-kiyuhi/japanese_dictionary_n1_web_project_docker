@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/test/musicPlay/musicPlay.css">
+    <title>Music Play</title>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header 內容 -->
+        <home-header></home-header>
+        <main>
+            <audio id="my-audio" src="/test/temp/LoveStory-Indila.mp3"></audio>
+            <music-player-button></music-player-button>
+        </main>
+        <!-- Footer 內容 -->
+        <home-footer></home-footer>
+    </div>
+    
+    <!-- 載入 Web Component -->
+    <script type="module" src="/js/components/homeHeader.js"></script>
+    <script type="module" src="/js/components/homeFooter.js"></script>
+    <script type="module" src="/js/components/musicPlayerButton.js"></script>
+    <script src="/test/musicPlay/musicPlay.js"></script>
+</body>
+</html>

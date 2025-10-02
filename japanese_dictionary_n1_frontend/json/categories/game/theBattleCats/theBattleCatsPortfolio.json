@@ -1,0 +1,120 @@
+{
+    "tagList": [
+        "catFruit",
+        "crazedCat",
+        "cyclone",
+        "lilCat",
+        "manicCat",
+        "zombieOutbreaksMoon"
+    ],
+    "yearList": [
+        2025
+    ],
+    "dataList": [
+        {
+            "tags": [
+                "catFruit"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/catFruit/blueCatFruit.json"
+        },
+        {
+            "tags": [
+                "catFruit"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/catFruit/greenCatFruit.json"
+        },
+        {
+            "tags": [
+                "catFruit"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/catFruit/purpleCatFruit.json"
+        },
+        {
+            "tags": [
+                "catFruit"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/catFruit/redCatFruit.json"
+        },
+        {
+            "tags": [
+                "catFruit"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/catFruit/yellowCatFruit.json"
+        },
+        {
+            "tags": [
+                "crazedCat"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/crazedCat/crazedCat.json"
+        },
+        {
+            "tags": [
+                "cyclone"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/cyclone/angelCyclone.json"
+        },
+        {
+            "tags": [
+                "cyclone"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/cyclone/blackCyclone.json"
+        },
+        {
+            "tags": [
+                "cyclone"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/cyclone/metalCyclone.json"
+        },
+        {
+            "tags": [
+                "cyclone"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/cyclone/redCyclone.json"
+        },
+        {
+            "tags": [
+                "cyclone"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/cyclone/thePerfectCyclone.json"
+        },
+        {
+            "tags": [
+                "cyclone"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/cyclone/whiteCyclone.json"
+        },
+        {
+            "tags": [
+                "lilCat"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/lilCat/lilCat.json"
+        },
+        {
+            "tags": [
+                "manicCat"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/manicCat/manicCat.json"
+        },
+        {
+            "tags": [
+                "zombieOutbreaksMoon"
+            ],
+            "year": 2025,
+            "json": "/json/categories/game/theBattleCats/zombieOutbreaksMoon/zombieOutbreaksMoon.json"
+        }
+    ]
+}

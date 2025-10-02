@@ -1,0 +1,11 @@
+{
+	"header": {
+		"type": "docs",
+		"scope": "README.md",
+		"subject": "更新 README.md 說明"
+	},
+	"body": [
+		"修正 README.md 大標題、功能描述"
+	],
+	"footer": []
+}

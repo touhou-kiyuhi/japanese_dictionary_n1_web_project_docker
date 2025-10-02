@@ -1,0 +1,42 @@
+/* Footer 固定在下方 */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.footer-links nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-links nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;             /* 白色文字 / icon */
+    margin-right: 12px;         /* icon 之間間距 */
+    text-decoration: none;      /* 去除底線 */
+    font-size: 24px;            /* icon 大小 */
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;             /* 滑過時變色（可換） */
+}

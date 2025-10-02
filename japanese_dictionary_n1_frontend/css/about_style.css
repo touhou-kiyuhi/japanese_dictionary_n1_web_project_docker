@@ -1,0 +1,102 @@
+#content-wrapper {
+    display: grid; /* 蓋過 .content-wrapper { display: flex; } */
+}
+
+#about-main {
+    display: grid; /* 改為 grid，取代 flex 撐開方式 */
+    grid-template-columns: repeat(5, 1fr); /* 水平切成 5 等分 */
+    justify-items: center; /* 讓每格內容水平置中 */
+    align-items: center;   /* 垂直置中 */
+}
+
+/* description-text 不受邊界限制 */
+.description-text {
+    /* grid-column: 1; 放第 1 格 */
+    text-align: left;
+    font-size: large;
+
+    opacity: 1;                 /* 初始透明隱藏 */
+    font-family: monospace;     /* 使用等寬字體，打字效果更自然 */
+    white-space: normal;        /* 防止換行 */
+    display: inline-block;      /* 使文字按行顯示 */
+    visibility: visible;         /* 隱藏文字 */
+    transition: opacity 1s ease; /* 當打字開始時才顯示 */
+
+    /* 調整在打字動畫時，可跨越 column 並不會與 user card 重疊 */
+    position: absolute;         /* 讓文字可以超出邊界 */
+    left: 30%;                  /* 讓文字在第二格的中間顯示 */
+    transform: translateX(-50%); /* 用此偏移讓文字居中並超出左右邊界 */
+}
+
+/* 光標閃爍效果 */
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: black;
+    margin-left: 3px;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
+}
+
+/* 卡片一開始在第 3 格 */
+.profile-card-wrapper {
+    grid-column: 3 / 4;
+    margin-top: 60px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 新增以下動畫設定 */
+    transition: transform 1s ease;
+    transform: translateX(0); /* 初始位置 */
+}
+
+/* 加入這個 class 代表卡片移動到第 4 格 */
+.profile-card-wrapper.move-to-4 {
+    transform: translateX(100%);
+    /* grid-column: 4 / 5; */
+}
+
+profile-card {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    /* 中間內容區會自動撐開剩餘高度 */
+    #about-main {
+        flex-direction: column-reverse;  /* 這裡改成 column-reverse */
+        display: flex;
+        flex: 1; /* 撐開剩餘空間 */
+        padding: 20px;
+        justify-content: center; /* 水平置中整個內容區 */
+        gap: 20px;
+    }
+
+    /* description-text 位置固定，不用移動 */
+    .description-text {
+        /* 在第 3 格 */
+        grid-column: 2 / 3;
+        text-align: left;
+
+        white-space: normal;        /* 防止換行 */
+        
+        position: static;
+        transform: none !important;
+    }
+
+    /* profile card 位置固定，不用移動 */
+    .profile-card-wrapper {
+        position: static;
+        transform: none !important;
+        transition: none !important;
+    }
+}
